@@ -1,0 +1,13 @@
+{
+    "name": "ysng",
+    "version": "0.1.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "webpack": "^1.8.5"
+    },
+    "scripts": {
+        "test": "node src/main.js",
+        "build": "webpack"
+    }
+}

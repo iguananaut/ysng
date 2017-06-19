@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube "Skeptic" Name Generator</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script type="text/javascript" src="bundle.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById("generate").addEventListener("click",
+          function() {
+            var name = document.getElementById("name");
+            name.innerText = YSNG.generateName();
+            name.style.visibility = "visible";
+          }, false);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>You<span class="tube">Tube</span> "Skeptic" Name Generator</h1>
+      <p>
+      Are you a "leftist" whose friends and followers all just happen to be
+      goose-stepping race-realist ethno-nationalist frogs?  Do you "love
+      women", but just hate <em>feminism</em> because it's part of a globalist
+      cultural Marxist conspiracy to ruin video games by <em>censorship</em> of
+      vagina bones?  Perhaps you're a big fan of <em>science</em>&mdash;facts
+      such as the genetic superiority of some races over others, the <em>two
+      genders</em>, and that global warming is a hoax perpetuated by the
+      Rothschilds?  Clearly your brilliant, expertly informed opinions deserve,
+      nay, are <em>owed</em> a platform.  And what better place to find your
+      audience than YouTube?! You've got your suit, you've got your hat, you've
+      got your totally-not-<em>problem-glasses</em> eyewear.  Now all you need
+      is a name for your channel:
+      </p>
+      <button id="generate" class="tube">Generate</button>
+      <p class="centered">
+      Your new YouTube channel name is:
+      </p>
+      <p id="name" class="centered tube"></p>
+    </div>
+  </body>
+</html>
