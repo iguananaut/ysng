@@ -158,11 +158,11 @@ const GRAMMAR = {
         "<skeptic>",
         "Atheist",
         "Conqueror",
-        "Cyborg",
         "Cynic",
         "Freethinker",
         "Heretic",
         "King",
+        "Logician",
         "Magician",
         "Philosopher",
         "Scientist",
@@ -173,10 +173,11 @@ const GRAMMAR = {
         "<skeptic>",
         "Apostic",
         "Cynic",
-        "Hertic",
+        "Heretic",
         "Logic",
         "Rational",
         "Reason",
+        "Satiric",
     ],
     "vowel-suffix": [
         "ian",
@@ -187,15 +188,17 @@ const GRAMMAR = {
         "Hereti",
         "Logi",
         "Reasoni",
+        "Satiri",
         "Scepti",
-        "Skepti",
-        "Techni"
+        "Skepti"
     ],
     "consonant-suffix": [
         "cked",
+        "cian",
         "con",
         "nator",
-        "thulu"
+        "thulu",
+        "tician"
     ],
     "armored": [  // Alternate spellings
         "Armored",
