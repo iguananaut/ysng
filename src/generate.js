@@ -1,5 +1,6 @@
 const GRAMMAR = require("./grammar");
 const PROD_RE = new RegExp("<([^>]+)>", "g");
+const PROD_MODS_RE = new RegExp("^([#_]{1,2}).*");
 const LETTER_SUBSTS = {
     "o": "0",
     "e": "3",
@@ -15,7 +16,7 @@ var randomChoice = function(choices) {
 
 /* This would be easier with modern ES2016 but I'll set that up later;
  * this will work on most modern browsers */
-var substituteLetters = function(name) {
+var substituteLetters = function(name, prob) {
     var letters = [];
     var nameLower = name.toLowerCase();
     Object.keys(LETTER_SUBSTS).forEach(function(letter) {
@@ -30,7 +31,7 @@ var substituteLetters = function(name) {
 
     /* If there are any replaceable letters, replace them with, say, 20%
      * chance */
-    if (Math.random() < 0.2) {
+    if (Math.random() < prob) {
         /* Choose a random letter of the ones we can replace */
         var letter = randomChoice(letters);
         var indices = [], idx = -1;
@@ -50,12 +51,12 @@ var substituteLetters = function(name) {
 }
 
 
-var _generateFromGrammarInternal = function(grammar, symbol, usedLiterals) {
+var _generateFromGrammarInternal = function(grammar, symbol, usedLiterals, mods) {
     var productions = grammar[symbol];
 
     if (Array.isArray(productions)) {
         var prod = randomChoice(productions);
-        if (typeof(grammar[prod]) === "undefined") {
+        if (grammar[prod] === undefined && prod.match(PROD_RE) === null) {
             // That is, if it's a literal and not a production rule don't reuse
             // it; don't allow an infinite loop though if no alternatives can
             // be found
@@ -65,25 +66,38 @@ var _generateFromGrammarInternal = function(grammar, symbol, usedLiterals) {
                 count++;
             }
             usedLiterals.add(prod);
+
+            /* Replace letters with numbers with low chance unless the # */
+            /* mod is active */
+            var prob = ((mods.indexOf("#") < 0) ? 0.1 : 0.9);
+            prod = substituteLetters(prod, prob);
+            if (mods.indexOf("_") >= 0) {
+                /* This mod means make the name all lowercase */
+                prod = prod.toLowerCase();
+            }
         }
     } else {
         var prod = productions;
+        var m = null;
+        if ((m = prod.match(PROD_MODS_RE)) !== null) {
+            mods += m[1];
+        }
     }
 
     return prod.replace(PROD_RE, function(m, symbol) {
         return _generateFromGrammarInternal(grammar, symbol,
-                                            usedLiterals).trim();
+                                            usedLiterals, mods).trim();
     });
 }
 
 
 var generateFromGrammar = function(grammar, symbol) {
-    return _generateFromGrammarInternal(grammar, symbol, new Set());
+    return _generateFromGrammarInternal(grammar, symbol, new Set(), "");
 }
 
 
 var generateName = function() {
-    return substituteLetters(generateFromGrammar(GRAMMAR, "name"));
+    return generateFromGrammar(GRAMMAR, "name");
 }
 
 
