@@ -140,7 +140,7 @@ const GRAMMAR = {
         "<prefix-only-adjective>"
     ],
     "adjective-suffix": [
-        "<adjective>",
+        "<adjective>"
     ],
     "noun": [
         "<consonant-base>ism",
