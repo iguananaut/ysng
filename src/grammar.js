@@ -219,6 +219,7 @@ const GRAMMAR = {
     ],
     "body-part": [
         "Arm",
+        "Face",
         "Finger",
         "Foot",
         "Hand",
