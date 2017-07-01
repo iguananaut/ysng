@@ -14,6 +14,11 @@ module.exports = {
                 test: /\.html$/,
                 loader: "file-loader",
                 query: "name=[name].[ext]"
+            },
+            {
+                test: /\.(jpg|css)$/,
+                loader: "file-loader",
+                query: "name=static/[name].[ext]&context=./static",
             }
         ]
     }
