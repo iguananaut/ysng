@@ -69,7 +69,7 @@ var _generateFromGrammarInternal = function(grammar, symbol, usedLiterals, mods)
 
             /* Replace letters with numbers with low chance unless the # */
             /* mod is active */
-            var prob = ((mods.indexOf("#") < 0) ? 0.05 : 0.8);
+            var prob = ((mods.indexOf("#") < 0) ? 0.0 : 0.5);
             prod = substituteLetters(prod, prob);
             if (mods.indexOf("_") >= 0) {
                 /* This mod means make the name all lowercase */

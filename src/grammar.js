@@ -1,33 +1,33 @@
 const GRAMMAR = {
     "name": [
         "<silly>",
-        "<fanboy>",
+        "#<fanboy>",
         "<generic>",
         "<historical>"
     ],
     "silly": [
-        "<silly-base>",
-        "<silly-base> <number>"
-    ],
-    "silly-base": [
-        "<silly-name> the <occupation>",
-        "<honorific> <noun>",
-        "<honorific> <occupation>",
+        "#<silly-name> the <occupation>",
+        "<silly-name> the <occupation> <number>",
+        "#<honorific> <noun>",
+        "#<honorific> <noun> <number>",
+        "#<honorific> <occupation>",
+        "#<honorific> <occupation> <number>",
         "<the> <silly-name>",
+        "<the> <silly-name> <number>",
         "#_<force-of-nature><body-part>",
         "#_<article-of-clothing>0n<body-part>",
         "<color> <bird> <speech-verb>"
     ],
     "silly-name": [
-        "<vowel-base><consonant-suffix>"
+        "#<vowel-base><consonant-suffix>"
     ],
     "fanboy": [
         "<famous-atheist> <fan>",
         "<famous-atheist> <fan> <number>",
         "<famous-atheist>phile",
         "<famous-atheist>phile <number>",
-        "<fan> of <famous-atheist>",
-        "<fan> of <famous-atheist> <number>",
+        "<fan-of> of <famous-atheist>",
+        "<fan-of> of <famous-atheist> <number>",
         "<the> Daily <famous-atheist>",
         "Church of <famous-atheist>",
         "On Knees for <famous-atheist>"
@@ -49,10 +49,14 @@ const GRAMMAR = {
         "Maher"
     ],
     "fan": [
-        "Apostle",
-        "Cult",
+        "<fan-of>",
         "Fan",
         "Lover"
+    ],
+    "fan-of": [
+        "Apostle",
+        "Cult",
+        "Disciple"
     ],
     "historical-figure": [
         "Aga",
@@ -104,8 +108,11 @@ const GRAMMAR = {
         "Doc",
         "Doctor",
         "Dr",
+        "King",
+        "Master",
         "Mister",
         "Mr",
+        "Pope",
         "Prof",
         "Professor"
     ],
@@ -164,7 +171,6 @@ const GRAMMAR = {
         "Cynic",
         "Freethinker",
         "Heretic",
-        "King",
         "Logician",
         "Magician",
         "Philosopher",
