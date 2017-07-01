@@ -14,6 +14,9 @@ const GRAMMAR = {
         "<honorific> <noun>",
         "<honorific> <occupation>",
         "<the> <silly-name>",
+        "#_<force-of-nature><body-part>",
+        "#_<article-of-clothing>0n<body-part>",
+        "<color> <bird> <speech-verb>"
     ],
     "silly-name": [
         "<vowel-base><consonant-suffix>"
@@ -199,6 +202,51 @@ const GRAMMAR = {
         "nator",
         "thulu",
         "tician"
+    ],
+    "force-of-nature": [
+        "Lava",
+        "Lightning",
+        "Magma",
+        "Thunder",
+        "Tornado",
+        "Volcano"
+    ],
+    "body-part": [
+        "Arm",
+        "Finger",
+        "Foot",
+        "Hand",
+        "Head",
+        "Leg",
+        "Toe"
+    ],
+    "article-of-clothing": [
+        "Hat",
+        "Pants",
+        "Shirt",
+        "Shoe"
+    ],
+    "color": ["Black", "Blue", "Grey", "Orange", "Red", "White"],
+    "bird": [
+        "Crow",
+        "Dove",
+        "Eagle",
+        "Hawk",
+        "Parrot",
+        "Pigeon",
+        "Raven",
+        "Sparrow"
+    ],
+    "speech-verb": [
+        "Expounds",
+        "Gossips",
+        "Harangues",
+        "Orates",
+        "Pontificates",
+        "Rambles",
+        "Rants",
+        "Sermonizes",
+        "Speaks"
     ],
     "armored": [  // Alternate spellings
         "Armored",
