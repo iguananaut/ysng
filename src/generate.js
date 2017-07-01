@@ -20,7 +20,8 @@ var substituteLetters = function(name, prob) {
     var letters = [];
     var nameLower = name.toLowerCase();
     Object.keys(LETTER_SUBSTS).forEach(function(letter) {
-        if (nameLower.indexOf(letter) >= 0) {
+        var idx = nameLower.indexOf(letter);
+        if (idx > 0 && idx < (nameLower.length - 1)) {
             letters.push(letter);
         }
     });
@@ -34,8 +35,9 @@ var substituteLetters = function(name, prob) {
     if (Math.random() < prob) {
         /* Choose a random letter of the ones we can replace */
         var letter = randomChoice(letters);
-        var indices = [], idx = -1;
-        while ((idx = nameLower.indexOf(letter, idx + 1)) >= 0) {
+        var indices = [], idx = 0;
+        while ((idx = nameLower.indexOf(letter, idx + 1)) > 0 &&
+                idx < nameLower.length - 1) {
             indices.push(idx);
         }
 
