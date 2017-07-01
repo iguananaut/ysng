@@ -40,7 +40,8 @@ const GRAMMAR = {
     "historical": [
         "<historical-figure> of <historical-place>",
         "<historical-figure> the <adjective-suffix>",
-        "<historical-figure> the <occupation>"
+        "<historical-figure> the <occupation>",
+        "_<number><historical-people><number>"
     ],
     "famous-atheist": [
         "Dawkins",
@@ -92,6 +93,7 @@ const GRAMMAR = {
         "Assyria",
         "Asturias",
         "Babylon",
+        "Byzantium",
         "Croton",
         "Elea",
         "Ephesus",
@@ -103,6 +105,15 @@ const GRAMMAR = {
         "Samos",
         "Thebes",
         "Troy"
+    ],
+    "historical-people": [
+        "Aramean",
+        "Assyrian",
+        "Babylonian",
+        "Byzantine",
+        "Hittite",
+        "Phoenician",
+        "Roman"
     ],
     "honorific": [
         "Doc",
