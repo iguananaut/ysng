@@ -1,6 +1,6 @@
 const GRAMMAR = require("./grammar");
 const PROD_RE = new RegExp("<([^>]+)>", "g");
-const PROD_MODS_RE = new RegExp("^([#_]{1,2}).*");
+const PROD_MODS_RE = new RegExp("^([#_]{1,2})(.*)");
 const LETTER_SUBSTS = {
     "o": "0",
     "e": "3",
@@ -78,10 +78,12 @@ var _generateFromGrammarInternal = function(grammar, symbol, usedLiterals, mods)
         }
     } else {
         var prod = productions;
-        var m = null;
-        if ((m = prod.match(PROD_MODS_RE)) !== null) {
-            mods += m[1];
-        }
+    }
+
+    var m = null;
+    if ((m = prod.match(PROD_MODS_RE)) !== null) {
+        prod = m[2];
+        mods += m[1];
     }
 
     return prod.replace(PROD_RE, function(m, symbol) {
