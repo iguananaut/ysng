@@ -1,21 +1,21 @@
 const GRAMMAR = {
     "name": [
-        "<cool>",
+        "<silly>",
         "<fanboy>",
         "<generic>",
         "<historical>"
     ],
-    "cool": [
-        "<cool-base>",
-        "<cool-base> <number>"
+    "silly": [
+        "<silly-base>",
+        "<silly-base> <number>"
     ],
-    "cool-base": [
-        "<cool-name> the <occupation>",
+    "silly-base": [
+        "<silly-name> the <occupation>",
         "<honorific> <noun>",
         "<honorific> <occupation>",
-        "<the> <cool-name>",
+        "<the> <silly-name>",
     ],
-    "cool-name": [
+    "silly-name": [
         "<vowel-base><consonant-suffix>"
     ],
     "fanboy": [
