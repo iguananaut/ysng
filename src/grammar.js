@@ -152,6 +152,7 @@ const GRAMMAR = {
         "Doubting",
         "Fighting",
         "Freethinking",
+        "Garbage",
         "Iron",
         "Reasoning",
         "Thinking"
