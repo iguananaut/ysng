@@ -1,6 +1,7 @@
 const GRAMMAR = {
     "name": [
         "<silly>",
+        "<silly>™",
         "#<fanboy>",
         "<generic>",
         "<historical>"
@@ -136,6 +137,7 @@ const GRAMMAR = {
         "Godless",
         "Great",
         "Hairy",
+        "Harmful",
         "Horny",
         "Infinite",
         "Invincible",
@@ -153,6 +155,7 @@ const GRAMMAR = {
         "Fighting",
         "Freethinking",
         "Garbage",
+        "Harmful",
         "Iron",
         "Reasoning",
         "Thinking"
@@ -170,6 +173,7 @@ const GRAMMAR = {
         "Atheism",
         "Cynicism",
         "Doubt",
+        "Opinions",
         "Freethought",
         "Logic",
         "Reason",
