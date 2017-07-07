@@ -5,7 +5,8 @@
     "private": true,
     "dependencies": {
         "webpack": "^1.8.5",
-        "file-loader": "^0.11.0"
+        "file-loader": "^0.11.0",
+        "rng": "^0.2.0"
     },
     "scripts": {
         "test": "node src/main.js",
