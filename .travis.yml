@@ -1,0 +1,17 @@
+sudo: false
+notifications:
+  email:
+  - erik.m.bray+iguananaut@gmail.com
+  on_failure: always
+language: javascript
+branches:
+  only:
+  - master
+install: node install
+script: node run build
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+        branch: gh-pages
