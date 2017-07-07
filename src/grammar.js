@@ -6,6 +6,10 @@ const GRAMMAR = {
         "<historical>"
     ],
     "silly": [
+        "<silly-base>",
+        "<silly-base>™"
+    ],
+    "silly-base": [
         "#<silly-name> the <occupation>",
         "<silly-name> the <occupation> <number>",
         "#<honorific> <noun>",
@@ -136,6 +140,7 @@ const GRAMMAR = {
         "Godless",
         "Great",
         "Hairy",
+        "Harmful",
         "Horny",
         "Infinite",
         "Invincible",
@@ -172,6 +177,7 @@ const GRAMMAR = {
         "Doubt",
         "Freethought",
         "Logic",
+        "Opinions",
         "Reason",
         "Science"
     ],
