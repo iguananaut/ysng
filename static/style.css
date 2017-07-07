@@ -19,7 +19,7 @@ footer {
   text-align: center;
 }
 
-#name {
+#youtube-name {
   text-align: center;
   width: auto;
   visibility: hidden;
@@ -37,7 +37,7 @@ footer {
   text-shadow: rgb(178, 62, 53) 0px 1px 0px;
 }
 
-#name, h1 {
+#youtube-name, h1 {
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
 	font-size: 48px;
 	font-style: normal;
@@ -53,6 +53,21 @@ p {
 
 p.centered {
   text-align: center;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+input {
+  box-shadow: rgb(242, 156, 147) 0px 1px 0px 0px inset;
+  border-radius: 15px/25px;
+  border: 1px solid rgb(216, 53, 38);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  text-shadow: rgb(178, 62, 53) 0px 1px 0px;
+  padding: 5px 10px;
 }
 
 .tube {

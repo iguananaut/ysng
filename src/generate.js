@@ -1,3 +1,4 @@
+const Random = require("rng");
 const GRAMMAR = require("./grammar");
 const PROD_RE = new RegExp("<([^>]+)>", "g");
 const PROD_MODS_RE = new RegExp("^([#_]{1,2})(.*)");
@@ -10,8 +11,23 @@ const LETTER_SUBSTS = {
 }
 
 
+var rng = null;
+
+var hashName = function(name) {
+    var hash = 0;
+    if (name.length == 0)
+        return hash;
+    for (var idx = 0; idx < name.length; idx++) {
+        var char = name.charCodeAt(idx);
+        hash = ((hash << 5) - hash) + char;
+        hash &= hash;
+    }
+    return hash;
+}
+
+
 var randomChoice = function(choices) {
-    return choices[Math.floor(Math.random() * choices.length)];
+    return choices[Math.floor(rng.uniform() * choices.length)];
 }
 
 
@@ -33,7 +49,7 @@ var substituteLetters = function(name, prob) {
 
     /* If there are any replaceable letters, replace them with, say, 20%
      * chance */
-    if (Math.random() < prob) {
+    if (rng.uniform() < prob) {
         /* Choose a random letter of the ones we can replace */
         var letter = randomChoice(letters);
         var indices = [], idx = 0;
@@ -101,7 +117,14 @@ var generateFromGrammar = function(grammar, symbol) {
 }
 
 
-var generateName = function() {
+var generateName = function(name) {
+    if (!name || name.trim() == "") {
+        if (rng === null) {
+            rng = new Random.MT();
+        }
+    } else {
+        rng = new Random.MT(hashName(name));
+    }
     return generateFromGrammar(GRAMMAR, "name");
 }
 

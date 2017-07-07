@@ -10,8 +10,9 @@
         document.getElementById("generate").addEventListener("click",
           function() {
             var name = document.getElementById("name");
-            name.innerText = YSNG.generateName();
-            name.style.visibility = "visible";
+            var youtube_name = document.getElementById("youtube-name");
+            youtube_name.innerText = YSNG.generateName(name.value);
+            youtube_name.style.visibility = "visible";
           }, false);
       };
     </script>
@@ -33,14 +34,20 @@
       got your totally-not-<em>problem-glasses</em> eyewear.  Now all you need
       is a name for your channel:
       </p>
+      <p class="centered">
+      <label for="name">Your name:</label><input id="name" name="name"><br>
+      <small>(or leave blank for a random name)</small>
+      </p>
       <button id="generate" class="tube">Generate</button>
       <p class="centered">
       Your new YouTube channel name is:
       </p>
-      <p id="name" class="centered tube"></p>
+      <p id="youtube-name" class="centered tube"></p>
     </main>
     <footer>
       <p class="centered tube">
+        <small>Privacy Statement: This is just for fun and doesn't set any
+          cookies or collect any data.</small><br>
         <small>Bug reports, name suggestions, and complaints go
           <a href="https://github.com/iguananaut/ysng">here</a>.</small>
       </p>
