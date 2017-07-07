@@ -3,7 +3,8 @@ notifications:
   email:
   - erik.m.bray+iguananaut@gmail.com
   on_failure: always
-language: javascript
+language: node_js
+node_js: latest
 branches:
   only:
   - master
