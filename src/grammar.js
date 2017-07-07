@@ -1,12 +1,15 @@
 const GRAMMAR = {
     "name": [
         "<silly>",
-        "<silly>™",
         "#<fanboy>",
         "<generic>",
         "<historical>"
     ],
     "silly": [
+        "<silly-base>",
+        "<silly-base>™"
+    ],
+    "silly-base": [
         "#<silly-name> the <occupation>",
         "<silly-name> the <occupation> <number>",
         "#<honorific> <noun>",
