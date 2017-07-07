@@ -7,8 +7,8 @@ language: javascript
 branches:
   only:
   - master
-install: node install
-script: node run build
+install: npm install
+script: npm run build
 deploy:
     provider: pages
     skip_cleanup: true
