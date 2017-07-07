@@ -155,7 +155,6 @@ const GRAMMAR = {
         "Fighting",
         "Freethinking",
         "Garbage",
-        "Harmful",
         "Iron",
         "Reasoning",
         "Thinking"
@@ -173,9 +172,9 @@ const GRAMMAR = {
         "Atheism",
         "Cynicism",
         "Doubt",
-        "Opinions",
         "Freethought",
         "Logic",
+        "Opinions",
         "Reason",
         "Science"
     ],
